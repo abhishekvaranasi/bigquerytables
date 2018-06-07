@@ -19,7 +19,7 @@ pipeline {
 				echo "Terraform deployment complete!"
 			}
 		}
-		stage ("Application Build"){
+		stage("Application Build"){
 			agent { label "Slave node" }
 			steps {
 				echo "git pull github.com/application_code.git"
