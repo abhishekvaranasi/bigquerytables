@@ -27,7 +27,7 @@ pipeline {
 			}
 		}
 
-		stage ("Application Deploy") {
+		stage("Application Deploy") {
 			agent { label "Slave node" }
 			steps {
 				echo "Application deployement started..."
