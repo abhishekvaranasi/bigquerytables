@@ -2,7 +2,7 @@ pipeline {
 	agent none
 	stages {
 
-		stage("Infrastructure Build") {
+		stage ("Infrastructure Build") {
 			agent { label "master" }
 			steps {
 				echo "Terraform initialization started..."
