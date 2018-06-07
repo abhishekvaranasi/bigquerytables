@@ -1,5 +1,5 @@
 pipeline {
-	agent any
+	agent Slave node {
 	stages {
 		stage("Infrastructure Build") {
 			steps {
@@ -22,12 +22,17 @@ pipeline {
 				echo "Application code ready!"
 			}
 		}
+	}
+	}
+	agent master {
+	stages {
 		stage ("Application Deploy") {
 			steps {
 				echo "Application deployement started..."
 				bat "cd scripts"
 				sh "scripts/app_script.sh"
 				echo "Application deployment complete!"
+				}
 			}
 		}
 	}
