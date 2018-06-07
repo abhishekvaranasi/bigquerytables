@@ -11,8 +11,8 @@ pipeline {
 		stage("Infrastructure Deploy"){
 			steps {
 				echo "Terraform deployment started..."
-				echo "cd scripts/"
-				echo "sh ./terraform_deploy.sh"
+				cd scripts/
+				sh ./terraform_deploy.sh
 				echo "Terraform deployment complete!"
 			}
 		}
@@ -25,8 +25,8 @@ pipeline {
 		stage ("Application Deploy") {
 			steps {
 				echo "Application deployement started..."
-				echo "cd scripts/"
-				echo "sh ./app_deploy.sh"
+				cd scripts/
+				sh ./app_deploy.sh
 				echo "Application deployment complete!"
 			}
 		}
