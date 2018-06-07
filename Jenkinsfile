@@ -1,5 +1,5 @@
 pipeline {
-	agent Slave node {
+	agent { label "Slave node"
 	stages {
 		stage("Infrastructure Build") {
 			steps {
@@ -24,7 +24,7 @@ pipeline {
 		}
 	}
 	}
-	agent master {
+	agent { label "master"
 	stages {
 		stage ("Application Deploy") {
 			steps {
