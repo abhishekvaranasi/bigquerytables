@@ -10,7 +10,7 @@ pipeline {
 				echo "Terraform initialization complete!"
 			}
 		}
-		stage ("Infrastructure Deploy"){
+		stage("Infrastructure Deploy"){
 			agent { label "master" }
 			steps {
 				echo "Terraform deployment started..."
