@@ -1,6 +1,7 @@
 pipeline {
-	agent { label "Slave node"
+	agent any
 	stages {
+		agent { label "Slave node" }
 		stage("Infrastructure Build") {
 			steps {
 				echo "Terraform initialization started..."
@@ -22,10 +23,7 @@ pipeline {
 				echo "Application code ready!"
 			}
 		}
-	}
-	}
-	agent { label "master"
-	stages {
+		agent { label "master" }
 		stage ("Application Deploy") {
 			steps {
 				echo "Application deployement started..."
@@ -35,5 +33,5 @@ pipeline {
 				}
 			}
 		}
-	}
 }
+
