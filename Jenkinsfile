@@ -12,7 +12,7 @@ pipeline {
 			steps {
 				echo "Terraform deployment started..."
 				bat "cd scripts"
-				bat "sh scripts/infra_script.sh"
+				sh "scripts/infra_script.sh"
 				echo "Terraform deployment complete!"
 			}
 		}
@@ -26,7 +26,7 @@ pipeline {
 			steps {
 				echo "Application deployement started..."
 				bat "cd scripts"
-				bat "sh scripts/app_script.sh"
+				sh "scripts/app_script.sh"
 				echo "Application deployment complete!"
 			}
 		}
