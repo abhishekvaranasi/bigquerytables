@@ -11,6 +11,7 @@ pipeline {
 			}
 		}
 		stage("Infrastructure Deploy"){
+			agent { label "master" }
 			steps {
 				echo "Terraform deployment started..."
 				bat "cd scripts"
@@ -19,6 +20,7 @@ pipeline {
 			}
 		}
 		stage("Application Build"){
+			agent { label "Slave node" }
 			steps {
 				echo "git pull github.com/application_code.git"
 				echo "Application code ready!"
